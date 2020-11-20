@@ -1,0 +1,32 @@
+<ul class="nav nav-tabs mt-3">
+    <li class="nav-item">
+        <a class="nav-link">Last works >>></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active text-success">Cenzor</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" [routerLink]="[ '/works/userlist']">Users</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" [routerLink]="[ '/works/tasklist']">Task</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" [routerLink]="[ '/home']">Back to >>> Home</a>
+    </li>
+</ul>
+
+<div class="container">
+    <h4 class="wordTitle">Bad words: <span class="badWords">{{ badWords }}</span></h4>
+    <div class="form-row">
+        <div class="col">
+            <input type="text" [(ngModel)]="words" name="words" [style.BorderColor]="inputBorderColor"
+                class="form-control" [placeholder]="inputPlaceholder">
+        </div>
+        <input (click)="add()" class="btn btn-warning" type="button" id="add" value="Add">
+        <input (click)="reset()" class="btn btn-danger" type="button" id="reset" value="Reset">
+        <textarea class="form-control" [(ngModel)]="text" name="text" rows="3" [style.BorderColor]="textareaBorderColor"
+            [placeholder]="textareaPlaceholder"></textarea>
+        <input (click)="cenzor()" type="button" id="cenzor" class="btn btn-success btn-sm btn-block" value="Cenzor">
+    </div>
+</div>

@@ -1,0 +1,26 @@
+.cards{
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-img-top{
+    background-image: url(img/cenzor.png);
+    background-size: cover;
+    height: 180px;
+}
+.card-img-center{
+    background-image: url(img/users.png);
+    background-size: cover;
+    height: 180px;
+}
+.card-img-bottom{
+    background-image: url(img/task.png);
+    background-size: cover;
+    height: 180px;
+}

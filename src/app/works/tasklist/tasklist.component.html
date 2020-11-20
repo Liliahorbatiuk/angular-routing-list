@@ -1,0 +1,59 @@
+<ul class="nav nav-tabs mt-3">
+    <li class="nav-item">
+        <a class="nav-link">Last works >>></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" [routerLink]="[ '/works/cenzor']">Cenzor</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" [routerLink]="[ '/works/userlist']">Users</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active text-success">Task</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" [routerLink]="[ '/home']">Back to >>> Home</a>
+    </li>
+</ul>
+
+<div class="wrap">
+    <h3>Count of Task {{ counter }}</h3>
+    <div class="form-inline">
+        <input type="text" class="form-control  form-control-sm" [(ngModel)]="task" name="task">
+        <button type="button" (click)="add()" class="btn btn-success">Add</button>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Task</th>
+            <th scope="col">Check</th>
+            <th scope="col">Done/In Progress</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tasks of list, let i = index">
+            <td>{{ i+1 }}</td>
+            <td>{{ tasks.task }}</td>
+            <td><input type="checkbox" [checked]="tasks.status" (change)="change(i)"></td>
+            <td [style.color]="tasks.status ? 'green' : 'red'" >{{ tasks.progress }}</td>
+            <td><button (click)="edit(i)" type="button" class="btn btn-warning">Edit</button></td>
+            <td><button (click)="delete(i)" [disabled]="!tasks.status" type="button" class="btn btn-danger">Delete</button></td>
+
+        </tr>
+        <tr *ngIf="save">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><input type="text" [(ngModel)]="inputSave" name="inputSave"></td>
+            <td><button (click)="saveBtn()" type="button" class="btn btn-success">Save</button></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+

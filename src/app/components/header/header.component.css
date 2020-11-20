@@ -1,0 +1,10 @@
+header{
+    height: 75px;
+    background-color: #eeeeee;
+    box-shadow: 1px 1px 3px 1px rgb(189, 187, 187);
+    text-align: center;
+}
+
+h3{
+    line-height: 2.2;
+}
